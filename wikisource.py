@@ -27,7 +27,6 @@ def getPoem(ind):
     html_r = r.content
     soup = BeautifulSoup(html_r, 'html.parser')
     table = soup.find("table", class_="prettybluetable sortable")
-    #poems = table.find_all("a", class_="mw-redirect")
     result = table.find("td", text=re.compile(ind)).find_next("td")
     title = table.find("td", text=re.compile(ind)).find_next("td").find_next("td")
     links = []
